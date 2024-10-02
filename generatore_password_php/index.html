@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generatore di Password</title>
+  </head>
+  <body>
+    <h1>Generatore di Password:</h1>
+    <form action="form.php" method="post">
+      <label for="lunghezza"
+        ><h4 style="margin-bottom: 0">
+          Scrivi il numero dei caratteri che vuoi usare:
+        </h4></label
+      ><br />
+      <input
+        type="text"
+        name="lunghezza"
+        id="lunghezza"
+        placeholder="seleziona la lunghezza della Password"
+        style="width: 300px"
+      />
+      <h3>seleziona cosa includere:</h3>
+      <input type="checkbox" name="numeri" id="numeri" />
+      <label for="numeri">Numeri</label>
+      <br />
+      <input type="checkbox" name="lettere_minuscole" id="lettere_minuscole" />
+      <label for="lettere_minuscole">Lettere minuscole</label>
+      <br />
+      <input type="checkbox" name="lettere_maiuscole" id="lettere_maiuscole" />
+      <label for="lettere_maiuscole">Lettere maiuscole</label>
+      <br />
+      <input
+        type="checkbox"
+        name="caratteri_speciali"
+        id="caratteri_speciali"
+      />
+      <label for="caratteri_speciali">Caratteri speciali</label><br />
+
+      <button type="submit" style="margin-top: 5px; width: 300px">
+        Genera
+      </button>
+    </form>
+  </body>
+</html>
