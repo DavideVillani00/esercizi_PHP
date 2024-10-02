@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calcolatrice</title>
+  </head>
+  <body>
+    <form action="form.php" method="get">
+      <input
+        type="text"
+        id="numero1"
+        name="numero1"
+        placeholder="Inserisci un numero"
+      />
+      <select name="operatori" id="operatori">
+        <option value="molt">X</option>
+        <option value="add">+</option>
+        <option value="sott">-</option>
+        <option value="div">/</option>
+        <option value="perc">%</option>
+        <option value="pot2">x^2</option>
+        <option value="pot3">x^3</option>
+        <option value="potY">x^y</option>
+        <option value="rad2">2√x</option>
+        <option value="rad3">3√x</option>
+        <option value="radY">y√x</option>
+      </select>
+      <input
+        type="text"
+        id="numero2"
+        name="numero2"
+        placeholder="Inserisci un numero"
+      />
+      <input type="submit" value="=" />
+    </form>
+  </body>
+</html>
