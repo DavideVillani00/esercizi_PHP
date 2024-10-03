@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form di contatto</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      #commento {
+        height: 200px;
+      }
+      #invia {
+        width: 100px;
+      }
+      input {
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dicci cosa ne pensi</h1>
+    <form action="form.php" method="post">
+      <label for="nome">Nome:</label>
+      <input type="text" name="nome" id="nome" />
+      <!-- uso text per l'email per esercitarmi con i regex-->
+      <label for="email">Email:</label>
+      <input type="text" name="email" id="email" />
+      <label for="commento">Commento:</label>
+      <input type="text" name="commento" id="commento" />
+      <input type="submit" value="Invia" id="invia" />
+    </form>
+  </body>
+</html>
