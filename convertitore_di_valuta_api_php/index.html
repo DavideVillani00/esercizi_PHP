@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convertitore di valuta</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      input,
+      select {
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Convertitore</h1>
+    <form action="form.php" method="get">
+      <label for="valore">Scrivi l'importo da convertire:</label>
+      <input
+        type="text"
+        name="valore"
+        id="valore"
+        placeholder="Scrivi un importo"
+      />
+      <label for="valuta1">Seleziona la tua valuta:</label>
+      <select name="valuta1" id="valuta1">
+        <option value="EUR">EUR</option>
+        <option value="USD">USD</option>
+        <option value="JPY">JPY</option>
+        <option value="BGN">BGN</option>
+        <option value="CZK">CZK</option>
+        <option value="DKK">DKK</option>
+        <option value="GBP">GBP</option>
+        <option value="HUF">HUF</option>
+      </select>
+      <label for="valuta1">Seleziona la valuta che desideri:</label>
+      <select name="valuta1" id="valuta1">
+        <option value="EUR">EUR</option>
+        <option value="USD">USD</option>
+        <option value="JPY">JPY</option>
+        <option value="BGN">BGN</option>
+        <option value="CZK">CZK</option>
+        <option value="DKK">DKK</option>
+        <option value="GBP">GBP</option>
+        <option value="HUF">HUF</option>
+      </select>
+      <input type="submit" value="Converti" />
+    </form>
+  </body>
+</html>
