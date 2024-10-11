@@ -6,7 +6,6 @@ $password = '';
 $database = 'esercizi_php_mysql';
 
 // crea connessione
-
 $conn = new mysqli($hostname, $username, $password, $database);
 
 if ($conn->errno) {

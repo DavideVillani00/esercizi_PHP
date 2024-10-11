@@ -1,5 +1,6 @@
 const btn_agg = document.querySelector("#aggiungi");
-let cont_agg = document.querySelector("#container_aggiungi");
+const cont_agg = document.querySelector("#container_aggiungi");
+// const modifica = document.querySelectorAll("a");
 // card visibile
 btn_agg.addEventListener("click", () => {
   cont_agg.style.display = "flex";

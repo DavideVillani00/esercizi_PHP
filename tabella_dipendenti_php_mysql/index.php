@@ -32,7 +32,46 @@ include './file_php/connessione.php';
       </div>
     </div>
     <!-- tabella -->
-    <table>
+
+    <?php
+    $sql = 'SELECT * FROM dipendenti';
+    $result = $conn->query($sql);
+if($result->num_rows>0){
+   echo "<table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Email</th>
+                <th>Data assunzione</th>
+                <th>Ruolo</th>
+              </tr>
+              </thead>
+              <tbody>";
+              while($row = $result->fetch_assoc()){
+                echo  "<tr>
+                          <td>{$row['id']}</td>
+                          <td>{$row['nome']}</td>
+                          <td>{$row['cognome']}</td>
+                          <td>{$row['email']}</td>
+                          <td>{$row['assunzione']}</td>
+                          <td>{$row['ruolo']}</td>
+                          <td><a href= './file_php/modifica.php?id={$row["id"]}'>Modifica</a></td>
+                          <td><a href= './file_php/elimina.php?id={$row["id"]}'>Elimina</a></td>
+                          
+                      </tr>";
+              }
+              
+     echo '</tbody>
+         </table>';
+}
+   
+    
+    
+    ?>
+
+    <!-- <table>
       <thead>
         <tr>
           <th>Id</th>
@@ -44,11 +83,8 @@ include './file_php/connessione.php';
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-        </tr>
       </tbody>
-    </table>
+    </table> -->
   </form>
   <script src="app.js"></script>
 </body>
