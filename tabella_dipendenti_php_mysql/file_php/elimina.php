@@ -2,10 +2,10 @@
 include './connessione.php';
 // non funziona
 $id = intval($_GET['id']);
-$sql =' DELETE   FROM dipendenti WHERE id= $id';
-if($conn->query($sql)===TRUE){
+$sql = " DELETE FROM dipendenti WHERE id = $id ";
+if ($conn->query($sql) === TRUE) {
     echo "dipendente eliminato";
-}else{
+} else {
     echo "errore";
 }
 header('Location: ../index.php');

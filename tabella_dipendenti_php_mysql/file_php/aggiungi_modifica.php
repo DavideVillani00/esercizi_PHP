@@ -19,7 +19,7 @@ if (!preg_match("/^[\w\.\-]{2,}+@[a-z_]+\.[a-z]{2,}$/", $email) || $email === ""
     die("inserisci un'email valida");
 }
 
-
+// ! inserire query sicure per poter modificare l'elemento tramite l'id passato dal form input hidden
 // quary diverse in base se il ruolo è vuoto
 if ($ruolo === null) {
     // creazione quary
