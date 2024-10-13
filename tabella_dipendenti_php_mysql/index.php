@@ -43,8 +43,7 @@ if (isset($_GET["mod_id"])) {
 
 <body>
   <!-- titolo -->
-  <h1>Dipendenti:</h1>
-  <button id="aggiungi">Aggiungi dipendente</button>
+
   <!-- form input dipendente -->
   <form action="./file_php/aggiungi_modifica.php" method="post">
     <!-- creazione di un input nascosto per poter passare l'id al file aggiungi_modifica.php -->
@@ -65,7 +64,7 @@ if (isset($_GET["mod_id"])) {
       </div>
     </div>
     <!-- tabella -->
-
+    <h1>Dipendenti:</h1>
     <?php
     $sql = 'SELECT * FROM dipendenti';
     $result = $conn->query($sql);
@@ -90,7 +89,7 @@ if (isset($_GET["mod_id"])) {
                           <td>{$row['email']}</td>
                           <td>{$row['assunzione']}</td>
                           <td>{$row['ruolo']}</td>
-                          <td><a href= './index.php?mod_id={$row["id"]}'>Modifica</a></td>
+                          <td><a id= 'modifica' href= './index.php?mod_id={$row["id"]}'>Modifica</a></td>
                           <td><a href= './file_php/elimina.php?id={$row["id"]}'>Elimina</a></td>
                           
                       </tr>";
@@ -98,13 +97,14 @@ if (isset($_GET["mod_id"])) {
 
       echo '</tbody>
          </table>';
+    } else {
+      echo "<p>Non ci sono dipendenti</p>";
     }
 
 
 
     ?>
   </form>
-  <script src="app.js"></script>
 </body>
 
 </html>

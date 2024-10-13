@@ -19,12 +19,11 @@ button {
   padding: 5px 10px;
   border-radius: 10px;
 }
-#aggiungi {
-  display: block;
-}
 /* card input aggiungi dipendente */
 #container_aggiungi {
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .card {
   width: 700px;
@@ -42,6 +41,13 @@ button {
   border: none;
   padding: 5px 10px;
   border-radius: 10px;
+}
+/* dipendenti */
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 /* tabella */
 table {
