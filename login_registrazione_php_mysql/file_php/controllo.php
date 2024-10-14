@@ -57,6 +57,7 @@ $stmt->close();
     }else{
         echo "la mail non corrisponde a nessun utente";
     }
+    
    $stmt->close();
 
 }
