@@ -1,3 +1,8 @@
+<?php
+include "./file_php/connessione.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,8 +13,8 @@
 </head>
 
 <body>
-    <h1>Benvenuto nel sito web</h1>
-    <input type="button" value="esci">
+    <h1>ciao <?php echo $email; ?> questo è il sito web</h1>
+    <a href="./accesso.php?reg=true"><button type="button">Esci</button></a>
 </body>
 
 </html>

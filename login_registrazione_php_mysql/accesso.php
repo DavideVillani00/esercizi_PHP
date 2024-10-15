@@ -1,7 +1,7 @@
 <?php
 
-    $registrato = isset($_GET['reg']) && $_GET['reg'] === 'true';
-   
+$registrato = isset($_GET['reg']) && $_GET['reg'] === 'true';
+
 ?>
 
 
@@ -17,33 +17,33 @@
 
 <body>
     <div id="card">
-        <h1><?php echo !$registrato? 'Registrati':'Accedi' ?></h1>
+        <h1><?php echo !$registrato ? 'Registrati' : 'Accedi' ?></h1>
         <form action="./file_php/controllo.php" method="post">
-            <input type="hidden" name="registrato" value="<?php echo $registrato; ?>">
-            <?php 
-            if(!$registrato){
-              echo  '<input type="text" name="nome" id="nome" placeholder="Nome">';
+            <input type="hidden" name="registrato" value="<?php echo boolval($registrato); ?>">
+            <?php
+            if (!$registrato) {
+                echo  '<input type="text" name="nome" id="nome" placeholder="Nome">';
             }
             ?>
             <input type="email" name="email" id="email" placeholder="Email">
             <input type="password" name="password" id="password" placeholder="Password">
-            <?php 
-                if(!$registrato){
-                  echo  '<input type="password" name="ripeti_password" id="ripeti_password" placeholder="Ripeti password">';
-                }
+            <?php
+            if (!$registrato) {
+                echo  '<input type="password" name="ripeti_password" id="ripeti_password" placeholder="Ripeti password">';
+            }
             ?>
-            
-            <input type="submit" value= "<?php echo !$registrato? 'Registrati' : 'Accedi' ?>">
+
+            <input type="submit" value="<?php echo !$registrato ? 'Registrati' : 'Accedi' ?>">
         </form>
         <?php
-        if(!$registrato){
-          echo  '<a href="./accesso.php?reg=true">Sei già registrato?</a>';
-        }else{
-          echo  '<a href="./accesso.php?reg=false">non sei registrato?</a>';
+        if (!$registrato) {
+            echo  '<a href="./accesso.php?reg=true">Sei già registrato?</a>';
+        } else {
+            echo  '<a href="./accesso.php?reg=false">non sei registrato?</a>';
         }
         ?>
-        
-        
+
+
     </div>
 </body>
 
