@@ -30,6 +30,11 @@ $registrato = isset($_GET['reg']) && $_GET['reg'] === 'true';
             <?php
             if (!$registrato) {
                 echo  '<input type="password" name="ripeti_password" id="ripeti_password" placeholder="Ripeti password">';
+            }else{
+                echo '<div id=ricordami_container>
+                         <input type="checkbox" name="ricordami" id="ricordami">
+                         <label for="ricordami">ricordami</label>
+                     </div>';
             }
             ?>
 

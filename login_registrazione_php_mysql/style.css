@@ -35,3 +35,8 @@ input {
   border: none;
   padding: 15px;
 }
+#ricordami_container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

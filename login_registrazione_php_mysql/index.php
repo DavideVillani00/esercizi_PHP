@@ -13,7 +13,7 @@ include "./file_php/connessione.php";
 </head>
 
 <body>
-    <h1>ciao <?php echo $email; ?> questo è il sito web</h1>
+    <h1>ciao questo è il sito web</h1>
     <a href="./accesso.php?reg=true"><button type="button">Esci</button></a>
 </body>
 

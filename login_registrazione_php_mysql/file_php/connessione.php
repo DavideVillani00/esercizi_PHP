@@ -12,3 +12,9 @@ $conn = new mysqli($hostname, $username, $password, $database);
 if ($conn->errno) {
     die("impossibile connettersi al database" . $conn->error);
 }
+
+
+
+if(isset($_COOKIE['ricordami'])){
+    $ricordami = $_COOKIE['ricordami'];
+}

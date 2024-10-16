@@ -36,7 +36,7 @@ if ($registrato === 0) {
     header('Location: ../accesso.php?reg=true');
 } else {
     // prendi il profilo
-    $sql = 'SELECT password FROM utenti_registrati WHERE email = ?';
+    $sql = 'SELECT password, id FROM utenti_registrati WHERE email = ?';
     // evita injiection
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
@@ -48,29 +48,34 @@ if ($registrato === 0) {
     if ($result->num_rows > 0) {
         // prendi ogni riga e controlla la password
         $row = $result->fetch_assoc();
+        $id = $row['id'];
         $password_hash = $row['password'];
         if (password_verify($password, $password_hash)) {
             header('Location: ../index.php');
-            sessione($email);
+            $stmt->close();
+            // creazione token e cookie per il ricordami
+            if(isset($_POST['ricordami'])){
+                $token = bin2hex(random_bytes(16));
+                setcookie('ricordami',$token, time() + 60*60*24*30,"/");
+                $sql = 'UPDATE utenti_registrati SET cookie_loggato = ? WHERE id = ?';
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("si", $token, $id);
+                $stmt->execute();
+                $stmt->close();
+            }
         } else {
             echo "password sbagliata";
         }
+        
     } else {
         echo "la mail non corrisponde a nessun utente";
     }
 
-    $stmt->close();
+    
 }
 
 
 
-
-function sessione($email)
-{
-    session_start();
-    $_SESSION["user_email"] = $email;
-    $_SESSION["loggato"] = true;
-}
 
 
 
