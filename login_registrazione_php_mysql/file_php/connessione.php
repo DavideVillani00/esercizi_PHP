@@ -14,7 +14,22 @@ if ($conn->errno) {
 }
 
 
-
-if(isset($_COOKIE['ricordami'])){
-    $ricordami = $_COOKIE['ricordami'];
+// controlla che ci sia il token
+if (isset($_COOKIE['ricordami'])) {
+    $token = $_COOKIE['ricordami'];
+}
+// recupera l'id che ha quel token
+$sql = 'SELECT id FROM utenti_registrati WHERE cookie_loggato = ?';
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $token);
+$stmt->execute();
+// scegli dove salvare il risultato
+$stmt->bind_result($id);
+// scarichi il risultato nella variabile impostata
+$stmt->fetch();
+$stmt->close();
+if ($id) {
+    session_start();
+    $_SESSION['id'] = $id;
+    $_SESSION['loggato'] = true;
 }

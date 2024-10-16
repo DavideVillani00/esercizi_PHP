@@ -1,6 +1,7 @@
 <?php
 include "./connessione.php";
 
+
 // variabili input
 $registrato = intval($_POST['registrato']);
 $nome = isset($_POST['nome']) ? $_POST['nome'] : null;
@@ -54,9 +55,9 @@ if ($registrato === 0) {
             header('Location: ../index.php');
             $stmt->close();
             // creazione token e cookie per il ricordami
-            if(isset($_POST['ricordami'])){
+            if (isset($_POST['ricordami'])) {
                 $token = bin2hex(random_bytes(16));
-                setcookie('ricordami',$token, time() + 60*60*24*30,"/");
+                setcookie('ricordami', $token, time() + 60 * 60 * 24 * 30, "/");
                 $sql = 'UPDATE utenti_registrati SET cookie_loggato = ? WHERE id = ?';
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param("si", $token, $id);
@@ -66,12 +67,9 @@ if ($registrato === 0) {
         } else {
             echo "password sbagliata";
         }
-        
     } else {
         echo "la mail non corrisponde a nessun utente";
     }
-
-    
 }
 
 
