@@ -1,0 +1,45 @@
+**CREAZIONE TABELLE
+$sql = 'CREATE TABLE utenti_recensioni_php_mysql (
+        id_utente INT PRIMARY KEY AUTO_INCREMENT,
+        nome VARCHAR(15) NOT NULL,
+        email VARCHAR(60) UNIQUE NOT NULL,
+        password VARCHAR(255) NOT NULL
+        )';
+$sql = 'CREATE TABLE ristoranti_recensioni_php_mysql (
+        id_ristorante INT PRIMARY KEY AUTO_INCREMENT,
+        nome VARCHAR(100) NOT NULL UNIQUE,
+        descrizione VARCHAR(500) NOT NULL,
+        immagine VARCHAR(255) NOT NULL,
+        punteggio INT CHECK (punteggio BETWEEN 1 AND 5)
+        )';
+$sql = 'CREATE TABLE sezione_recensioni_php_mysql (
+        id_recensione INT PRIMARY KEY AUTO_INCREMENT,
+        id_utente INT,
+        id_ristorante INT,
+        punteggio INT NOT NULL CHECK (punteggio BETWEEN 1 AND 5),
+        commento VARCHAR(255),
+        data DATE NOT NULL,
+        FOREIGN KEY (id_utente) REFERENCES utenti_recensioni_php_mysql(id_utente)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+        FOREIGN KEY (id_ristorante) REFERENCES ristoranti_recensioni_php_mysql(id_ristorante)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+
+        )';
+
+
+/_/_/_/_/
+
+**INSERIMENTO DI RISTORANTI:
+
+$sql = 'INSERT iNTO ristoranti_recensioni_php_mysql (nome, descrizione, immagine) VALUES ("Ristorante Pizzeria Boifava" ,"Il Ristorante Pizzeria Boifava, propone piatti tipici della tradizione culinaria mediterranea a base di pesce e pizza a lunga lievitazione, caratterizzata da un impasto altamente digeribile.
+Nel ristorante, oltre alle squisite pizze create da pizzaioli professionisti è possibile scegliere tra un ampio assortimento di piatti, dalle ricette più tradizionali a quelle più moderne e innovative.", "https://lh3.googleusercontent.com/p/AF1QipOaj7rztSkG3slMkkHfDappRnlDJrlyJU-maL6V=s680-w680-h510-rw")
+        ';
+
+$sql = 'INSERT iNTO ristoranti_recensioni_php_mysql (nome, descrizione, immagine) VALUES ("I Tentacoli Da Gegè", "Il ristorante I Tentacoli è stato aperto nel 1988 dai coniugi Martino, da allora viene portato avanti con passione da tutta la famiglia, ristrutturato completamente nel 2002 il ristorante ha preso una nota di eleganza mantenendo sempre l\’accoglienza di un ambiente familiare, è stata introdotto una fornita cantina con oltre 500 etichette e la cucina è sempre curata.", "https://lh3.googleusercontent.com/p/AF1QipMOuhuZeLqaGPyykv3ZO5bJs5xLNM7QroQ_l6ir=s680-w680-h510-rw")
+        ';
+
+$sql = 'INSERT iNTO ristoranti_recensioni_php_mysql (nome, descrizione, immagine) VALUES ("Ristorante Pizzeria Fuoricitta\'", "Scopri Fuoricittà, un luogo dove la passione per la buona cucina incontra la tradizione, e dove il nostro impegno quotidiano è regalare a ogni ospite un\'esperienza gastronomica indimenticabile.
+Immergiti nell\’esperienza culinaria di Fuoricittà, dove gusto autentico e tradizione si fondono in ogni piatto.", "https://lh3.googleusercontent.com/p/AF1QipNrXoCOL7bZsgjo93ONr__NlKimobRVo8RKXq3z=s680-w680-h510-rw")
+        ';
