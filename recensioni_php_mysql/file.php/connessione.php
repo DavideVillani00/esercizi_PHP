@@ -1,0 +1,1 @@
+<!-- !! da creare la connessione, 3 tabelle (ristoranti (id nome descrizione id_recensione), recensioni (prende id tabella ristoranti (id stelle recensione data)) e utenti registrati["puoi usare quella vecchia"]) -->
