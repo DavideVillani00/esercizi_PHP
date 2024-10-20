@@ -4,9 +4,9 @@
 <?php
 //costanti di connessione database
 define("HOSTNAME", "127.0.0.1");
+define("DATABASE", "esercizi_php_mysql");
 define("USERNAME", "root");
 define("PASSWORD", "");
-define("DATABASE", "esercizi_php_mysql");
 
 
 $conn = new mysqli(HOSTNAME, USERNAME, PASSWORD, DATABASE);

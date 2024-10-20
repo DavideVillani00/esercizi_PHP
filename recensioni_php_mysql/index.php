@@ -1,3 +1,11 @@
+<?php
+require("./file_php/connessione.php");
+// conta quanti ristoranti ci sono
+$sql = "SELECT COUNT(id_ristorante) FROM ristoranti_recensioni_php_mysql";
+$stmt = $conn->query($sql);
+
+
+?>
 <!DOCTYPE html>
 <html lang="it">
 
@@ -19,9 +27,9 @@
         <!-- nome con img -->
         <h3>"nome Risorante"</h3>
         <div id="immagini">
-            <a href="#"><img src="./icone/icons8-cerchiato-sinistra-96.png" alt="freccia sinistra"></a>
+            <a href="./index.php?id=<?php echo $id_precedente; ?>"><img src="./icone/icons8-cerchiato-sinistra-96.png" alt="freccia sinistra"></a>
             <img src="https://www.erboristeriabio.com/images/prod_erbor_integratori/prova.jpg" alt="foto del ristorante">
-            <a href="#"><img src="./icone/icons8-cerchiato-destro-96.png" alt="freccia destra"></a>
+            <a href="./index.php?id=<?php echo $id_successivo; ?>"><img src="./icone/icons8-cerchiato-destro-96.png" alt="freccia destra"></a>
         </div>
         <!-- sezione descrizione con recensioni -->
         <div id="descrizione">
