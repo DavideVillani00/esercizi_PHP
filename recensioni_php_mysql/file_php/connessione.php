@@ -2,13 +2,14 @@
 
 
 <?php
-//variabili di connessione database
-$hostname = "127.0.0.1";
-$username = "root";
-$password = "";
-$database = "esercizi_php_mysql";
+//costanti di connessione database
+define("HOSTNAME", "127.0.0.1");
+define("USERNAME", "root");
+define("PASSWORD", "");
+define("DATABASE", "esercizi_php_mysql");
 
-$conn = new mysqli($hostname, $username, $password, $database);
+
+$conn = new mysqli(HOSTNAME, USERNAME, PASSWORD, DATABASE);
 if ($conn->errno) {
     echo $conn->error;
 }
